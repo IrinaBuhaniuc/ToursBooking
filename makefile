@@ -16,6 +16,10 @@ dev-showmigrations:
 dev-sqlmigrate:
 	python manage.py sqlmigrate $(app_name) $(migration_file) --settings=config.settings.dev
 
+dev-createsuperuser:
+	python manage.py createsuperuser --settings=config.settings.dev
+
+
 dev-shell:
 	python manage.py shell --settings=config.settings.dev
 
