@@ -1,0 +1,51 @@
+
+{% comment %} {% extends "base.html" %}{% load static %}
+
+{% block title %}
+    HomePage
+{% endblock title %}
+
+{% block stylesheet %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/homepage.css' %}" />
+{% endblock stylesheet %}
+
+{% block content %}
+    <div>
+        <h1>Welcome to Moldova!</h1>
+    </div>
+    <h2>On this Website you will find the most popular tours for turists.</h2>
+    <ul>
+        {% for tour in tours_list %}
+        <li><a href="{% url 'tours-details' id=tour.id %}">{{tour.name}}</a></li>
+        <p>{{tour.description}}</p>
+        {% endfor %}
+    </ul>
+    </ul> 
+{% endblock content %} {% endcomment %}
+
+
+
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/homepage.css' %}">
+    <title>HomePage</title>
+</head>
+<body>
+    <div>
+    <h1>Welcome to Moldova!</h1>
+    </div>
+    <h2>On this Website you will find the most popular tours for turists.</h2>
+    <ul>
+        {% for tour in tours_list %}
+        <li><a href="{% url 'tours-details' id=tour.id %}">{{tour.name}}</a></li>
+        <p>{{tour.description}}</p>
+        {% endfor %}
+    </ul>
+    </ul>
+</body>
+</html> 

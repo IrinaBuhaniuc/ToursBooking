@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Tour Details
+{% endblock title %}Tour Details
+
+{% block content %}
+
+    <h1>{{tour.name | title}}</h1>
+    
+
+    <p><b>Description:<b> {{tour.description}}</p>
+    <p><b>Category:<b> {{tour.cat_id.name}}</p>
+    <p><b>Price:</b> {{tour.price}} Euro</p>
+    <p><b>Rating:<b> {{avg_rate}}</p>
+    <p><b>Reviews:<b> 
+        <ul>
+        {%for review in reviews%}
+        <li>{{review.review}}</li>
+        {% endfor %}
+        </ul>
+    </p> 
+       
+
+{% endblock content %}

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}
+    {{block.super}}- List
+{% endblock title %}
+
+
+{% block content %}
+    <h1>Avaible Tours:</h1>
+    <div class='align_tours_list'>
+    <ul>
+        {% for tour in tours_list%}
+        <li>{{tour}}</li>
+        {% endfor %}
+    </ul>
+   </div> 
+{% endblock content %}

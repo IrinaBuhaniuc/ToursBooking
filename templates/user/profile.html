@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {{block.super}}- Profile
+{% endblock title %}
+{% block content %}
+    <h1>Welcome to {{user.username}}</h1>
+    <div >
+    <h2>Booked tours</h2>
+    <ul>
+    {%for tour in booked_tours%}
+    <li>{{tour.tour_id.name}}</li>
+    {% endfor %}
+    </ul>
+    <p>You have not booked any tours yet</p>
+    </div>
+
+
+{% endblock content %}
